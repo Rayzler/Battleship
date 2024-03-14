@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./src/icon.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: rgb(52, 52, 52);
+        }
+
+        .cell {
+            width: 100%;
+            aspect-ratio: 1/1;
+            outline: 2px solid rgb(63, 63, 63);
+            border: none;
+            color: rgba(0, 169, 255, 0);
+            background-color: #00a9ff;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        span {
+            width: 100%;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: #1e1f22;
+            padding-inline: 25px;
+
+            & * {
+                color: white;
+            }
+
+            & button {
+                background-color: transparent;
+                border: 2px solid white;
+                padding: 5px 15px;
+                border-radius: 10px;
+                margin: 5px 5px;
+            }
+
+            & button:disabled {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar mb-3">
+    <a href="./index.html" class="text-decoration-none me-auto"><h3 class="m-0">Batalla Naval</h3></a>
+    <button id="play">Play</button>
+    <button disabled id="restart">Restart</button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="container col-xl-4 col-lg-5 col-12">
+            <p class="text-center text-white">Tablero del CPU</p>
+        </div>
+        <div class="container col-xl-4 col-lg-5 col-12">
+            <p class="text-center text-white">Tablero del Jugador</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container col-xl-4 col-lg-5 col-12" id="board1">
+        </div>
+        <div class="container col-xl-4 col-lg-5 col-12" id="board2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="row">
+                <div class="input-group mb-3 col flex-column align-items-start">
+                    <p class="text-white">Tamaño del tablero</p>
+                    <label>
+                        <input type="number" class="form-control" placeholder="Dimensión del tablero" value="10" max="11" min="3">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <p class="text-white">Orientación del barco</p>
+                <p>
+                    <button type="button" class="btn btn-light" id="orientation">Horizontal</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="col">
+            <p class="text-white">Tamaño del barco</p>
+
+            <div class="input-group col">
+                <div class="input-group-text">
+                    <input name="ships" id="2" checked class="form-check-input mt-0" type="radio" value="2" aria-label="Radio button for following text input">
+                </div>
+                <label for="2">
+                    <img src="src/PatrolBoat.png" alt="">
+                </label>
+            </div>
+
+            <div class="input-group col">
+                <div class="input-group-text">
+                    <input name="ships" id="3" class="form-check-input mt-0" type="radio" value="3" aria-label="Radio button for following text input">
+                </div>
+                <label for="3">
+                    <img src="src/Cruiser.png" alt="">
+                </label>
+            </div>
+
+            <div class="input-group col">
+                <div class="input-group-text">
+                    <input name="ships" id="4" class="form-check-input mt-0" type="radio" value="4" aria-label="Radio button for following text input">
+                </div>
+                <label for="4">
+                    <img src="src/BattleShip.png" alt="">
+                </label>
+            </div>
+
+            <div class="input-group col">
+                <div class="input-group-text">
+                    <input name="ships" id="5" class="form-check-input mt-0" type="radio" value="5" aria-label="Radio button for following text input">
+                </div>
+                <label for="5">
+                    <img src="src/AircraftCarrier.png" alt="">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
